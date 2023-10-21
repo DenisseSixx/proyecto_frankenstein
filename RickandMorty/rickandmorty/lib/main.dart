@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:rickandmorty/providers/rick_provider.dart';
+import 'package:rickandmorty/screens/character_details.dart';
+import 'package:rickandmorty/screens/character_list.dart';
 import 'package:rickandmorty/screens/home_screen.dart';
 
 void main() => runApp(const AppState());
@@ -41,7 +43,8 @@ class MyApp extends StatelessWidget {
        initialRoute: 'a',
       routes: {
         'a':(_)=> HomeScreen(),
-        //'details':(_)=> DetailsScreen()
+        'details':(_)=> CharacterListScreen(p: [],),
+       // 'chatacter':()=> CharacterScreen(a: [],)
       },
       theme:ThemeData(
          brightness: Brightness.dark ,

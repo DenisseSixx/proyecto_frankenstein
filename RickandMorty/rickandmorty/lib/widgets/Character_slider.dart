@@ -46,9 +46,9 @@ class _MoviePoster extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 180,
-      height: 250,
-      margin: const EdgeInsets.symmetric(horizontal: 10),
+      width: 100,
+      height: 150,
+      margin: const EdgeInsets.symmetric(horizontal: 20),
       child: Column(
         children: [
           GestureDetector(
@@ -57,10 +57,11 @@ class _MoviePoster extends StatelessWidget {
               borderRadius: BorderRadius.circular(20),
               child: FadeInImage(
                 placeholder: AssetImage('assets/no-image.jpg'),
-                image: NetworkImage(character.fullPosterImg),
+                image: NetworkImage(character.image),
                //image: NetworkImage('assets/no-image.jpg'),
-                width: 180,
-                height: 250,
+                width: 100,
+                height: 150,
+                fit: BoxFit.cover,
               ),
             ),
           ),

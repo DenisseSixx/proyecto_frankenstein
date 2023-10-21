@@ -22,28 +22,34 @@ class HomeScreen extends StatelessWidget {
       
         elevation: 0,
         actions: [
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.search_outlined),
-          )
+          /*IconButton(
+              icon: const Icon(Icons.menu),
+            onPressed: () {
+              Scaffold.of(context).openDrawer();
+            },
+          
+          )*/
+          
         ],
         title: const Center(
         //  child: Text('Personajes'),
         ),
       ),
-      
       body: Column(
-        
+      
 
         children: [ 
-          
+         
+
           Image.asset('assets/bar.jpg'),
           
        CharacterSlider(
             characters: rickProvider.characters),
              Image.asset('assets/rmorty.gif'),
           ],
+          
       ),
+      drawer: MenuDrawer(per: rickProvider.characters),
     );
   }
 }

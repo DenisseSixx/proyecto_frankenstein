@@ -4,16 +4,17 @@ import 'package:rickandmorty/models/character_response.dart';
 import 'package:rickandmorty/providers/rick_provider.dart';
 
 class CharacterScreen extends StatelessWidget {
-  final Character character;
-  const CharacterScreen({super.key, required this.character});
+  
+  const CharacterScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final Character character = ModalRoute.of(context)?.settings.arguments as Character;
     final size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text(character.name!),
+        title: Text(character.name),
       ),
       body: SizedBox(
         height: double.infinity,

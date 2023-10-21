@@ -10,7 +10,7 @@ class RickProvider extends ChangeNotifier {
   List<Episode> episodes = [];
 
  getCharacters(int page) async {
-    var result = await http.get(Uri.https(url, "/api/character", {
+    var result = await http.get(Uri.https(url, "api/character", {
       'page': page.toString(),
     }));
     final response = CharacterResponse.fromRawJson(result.body);
@@ -20,7 +20,7 @@ class RickProvider extends ChangeNotifier {
 
   Future<List<Character>> getCharacter(String name) async {
     var result =
-        await http.get(Uri.https(url, '/api/character/', {'name': name}));
+        await http.get(Uri.https(url, 'api/character/', {'name': name}));
     final response = CharacterResponse.fromRawJson(result.body);
     return response.results;
   }
